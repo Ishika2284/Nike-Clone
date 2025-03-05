@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <style>
+    .main {
+      display: flex;
+      gap: 20px;
+      margin-left: 250px;
+    }
+
+    .nav-item {
+      font-weight: 500;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, ' Open Sans', ' Helvetica Neue', sans-serif;
+
+    }
+
+    .carousel-container {
+      width: 50%;
+      height: 50vh;
+      overflow: hidden;
+    }
+
+    .carousel {
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-inner,
+    .carousel-item {
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-item img,
+    .carousel-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      /* Ensures images and videos are fully visible */
+    }
+
+    .container1 {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .featured-heading {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 20px;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .card {
+      flex: 1;
+      max-width: 32%;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .card-body {
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .banner-card {
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+      border: none;
+      overflow: hidden;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .banner-video {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .banner-content {
+      background: white;
+      padding: 30px;
+    }
+
+    .banner-heading {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .banner-subtext {
+      font-size: 1.2rem;
+      color: gray;
+      margin-bottom: 15px;
+    }
+
+    .notify-btn {
+      background: black;
+      color: white;
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .carousel-container {
+      max-width: 1000px;
+      margin-top: 50px;
+      margin-left: 280px;
+      text-align: center;
+
+    }
+
+    .carousel-inner {
+      display: flex;
+      align-items: center;
+    }
+
+    .carousel-item {
+      text-align: center;
+    }
+
+    .shoe-img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
+
+    .shoe-name {
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 5%;
+    }
+
+    .container2 {
+      margin: 50px;
+
+    }
+
+    .card1 img {
+      height: 600px;
+      width: 1200px;
+      overflow: hidden;
+      margin: 50px;
+    }
+
+    .card-text1 {
+      font-weight: 900;
+      font-size: 70px;
+      font-family: Helvetica Now Text, Helvetica, Arial, sans-serif;
+
+    }
+
+    .container3 {
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 20px;
+    }
+
+    .card2 {
+      flex: 0 0 auto;
+      width: 50%;
+      /* Larger cards to fit 3 at a time */
+      margin-right: 30px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .container3:hover::-webkit-scrollbar {
+      height: 8px;
+      overflow-y: visible;
+    }
+
+
+/* Horizontal Scroll Container */
+.container4 .row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 5px;
+    padding-bottom: 10px;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  
+}
+.container4 h4 {
+    margin-top: 100px; /* Adjust as needed */
+    margin-bottom: 15px;
+    font-weight: bold;
+    padding-left: 80px;
+    padding-bottom: 30px;
+}
+.container4 .row::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari */
+}
+
+/* Individual Cards */
+.container4 .col-md-3 {
+    flex: 0 0 auto;
+    width: 450px; /* Adjust width as needed */
+    scroll-snap-align: center;
+    margin-left:70px;
+}
+
+/* Card Styling */
+.card3 {
+    border: none;
+    
+    overflow: hidden;
+    position: relative;
+}
+
+/* Image Styling */
+.card3 .card-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+/* Overlay and Button Styling */
+.card-img-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+
+}
+
+.card-img-overlay a {
+    background: white;
+    color: black;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/nike.png"
+          alt="nike" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <div class="main">
+            <li class="nav-item ">
+              <a class="nav-link active " aria-current="page" href="#">New & Featured</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Men</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Women</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Kids</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Sale</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">SNKRS</a>
+            </li>
+          </div>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 rounded-pill" type="search" placeholder="Search" aria-label="Search">
+        </form>
+        <img width="30" height="30" src="https://img.icons8.com/ios/50/like--v1.png" alt="like--v1" />
+        <img width="30" height="30" src="https://img.icons8.com/ios/50/bag-front-view.png" alt="bag-front-view" />
+      </div>
+    </div>
+  </nav>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <video class="d-block w-100" autoplay loop muted>
+          <source src="https://videos.pexels.com/video-files/8533112/8533112-uhd_2560_1440_25fps.mp4" type="video/mp4">
+        </video>
+        
+        <div class="carousel-caption d-none d-md-block">
+          <h5>just in</h5>
+          <h1>VEMORO 18</h1>
+          <p>Max cushioning for ultimate ride</p>
+          <button type="button" class="btn btn-light rounded-pill">Shop</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.pexels.com/photos/345415/pexels-photo-345415.jpeg?auto=compress&cs=tinysrgb&w=600"
+          class="d-block w-10" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <h1>MAX STACK</h1>
+          <p>Some representative placeholder content for the second slide.</p>
+          <button type="button" class="btn btn-light rounded-pill">Shop</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.pexels.com/photos/1032109/pexels-photo-1032109.jpeg?auto=compress&cs=tinysrgb&w=600"
+          class="d-block w-10" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>MAX COMFORT</h1>
+
+          <p>Some representative placeholder content for the third slide.</p>
+          <button type="button" class="btn btn-light rounded-pill">Shop</button>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="container1">
+    <div class="featured-heading">Featured</div>
+
+    <div class="card-container">
+      <div class="card">
+        <img
+          src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_436,c_limit/5de4f654-e4cf-4e63-b4a5-c243182abdd3/image.png"
+          class="card-img-top" alt="Nike Running Shoe Finder">
+        <div class="card-body">
+          <p class="card-text">Nike Running Shoe Finder</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_436,c_limit/10cc5131-069e-4aa9-b7fe-5d28d3d8bdfc/image.png"
+          class="card-img-top" alt="Killshot 2 Leather">
+        <div class="card-body">
+          <p class="card-text">Killshot 2 Leather</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_436,c_limit/82ed6316-6b1c-446a-9589-7edade12d714/image.png"
+          class="card-img-top" alt="Vomero 18">
+        <div class="card-body">
+          <p class="card-text">Vomero 18</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card banner-card">
+    <video class="banner-video" autoplay muted loop>
+      <source src="https://videos.pexels.com/video-files/853958/853958-hd_1920_1080_30fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="banner-content">
+      <h1 class="banner-heading">EXPLORATION IN PROGRESS.</h1>
+      <p class="banner-subtext">Air Max Dn8 — Releasing March 6th.</p>
+      <a href="#" class="notify-btn">Notify Me</a>
+    </div>
+  </div>
+  <div class="carousel-container">
+    <h2>Shop by Icons</h2>
+
+    <div id="shoeCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_349,c_limit/c05dfab5-2d0e-48e3-8ca0-f04c21ccee2c/nike-just-do-it.png"
+            class="shoe-img" alt="Vomero 5">
+          <p class="shoe-name">VOMERO 5</p>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_349,c_limit/c6ce0b87-cc23-4113-9d19-48248900eb0c/nike-just-do-it.png"
+            class="shoe-img" alt="Pegasus 41">
+          <p class="shoe-name">PEGASUS 41</p>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_349,c_limit/8568c73b-a0b5-47e0-a9bc-409353e7272e/nike-just-do-it.png"
+            class="shoe-img" alt="V2K">
+          <p class="shoe-name">V2K</p>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_349,c_limit/2ea8fe0a-b92c-4eb0-8ae5-b80ffc95a7d2/nike-just-do-it.png"
+            class="shoe-img" alt="V2K">
+          <p class="shoe-name">V2K</p>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_349,c_limit/9a1898f3-e10d-4df8-b2cf-e2b0735f7742/nike-just-do-it.png"
+            class="shoe-img" alt="V2K">
+          <p class="shoe-name">V2K</p>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_349,c_limit/f520c30b-5385-4f77-bdc3-40d4878d0d55/nike-just-do-it.png"
+            alt="V2K">
+          <p class="shoe-name">V2K</p>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_349,c_limit/b9c593b6-f789-4459-abb3-4708eb84d047/nike-just-do-it.png"
+            alt="V2K">
+          <p class="shoe-name">V2K</p>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#shoeCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#shoeCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <h4 class="container2">Dont Miss</h4>
+  <div class="card1">
+    <img
+      src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_1595,c_limit/aeea1b23-c2a5-4b84-8882-7c3ea646dd4a/nike-just-do-it.jpg"
+      class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Womens Air Jordan 4RM</h5>
+      <h1 class="card-text1">RIDE EASY</h1>
+      <p class="card-text2">this new take classic comes in a comfartable low profile with iconic style</p>
+      <a href="#" class="btn btn-primary rounded-pill btn btn-dark">Shop</a>
+    </div>
+  </div>
+  <h4 class="container-fluid m-3">
+    Trending Now : Triple White
+  </h4>
+
+  <div class="container3">
+
+    <div class="card2" style="width: 18rem;">
+      <img
+        src="https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.5/h_381,c_limit/f888b4a3-a02a-420d-93e3-cb33c3bb30ac/air-force-1-07-texture-shoes-FxHT9d.png"
+        class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Nike Air Force 1 </h5>
+        <span class="card-text">Mens Shoes
+        </span>
+        <span class="card-text">MRP : ₹ 9 695.00</span>
+      </div>
+    </div>
+
+    <div class="card2" style="width: 18rem;">
+      <img
+        src="https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.5/h_381,c_limit/ccbf11db-ea81-499f-bd82-a36b34195bd0/cortez-23-leather-shoes-1VrCHW.png"
+        class="card-img-top" alt="...">
+      <div class="card-body">
+
+        <h5 class="card-title">Nike Air Force 1
+        </h5>
+        <span class="card-text">Mens Shoes
+        </span>
+        <span class="card-text">MRP : ₹ 9 695.00</span>
+      </div>
+    </div>
+
+
+
+    <div class="card2" style="width: 18rem;">
+      <img
+        src="https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.5/h_381,c_limit/05021bfa-ea0a-4456-b0fa-e68b76307673/air-force-1-07-shoes-BNWBpz.png"
+        class="card-img-top" alt="...">
+      <div class="card-body">
+
+        <h5 class="card-title">Nike Air Force 1
+        </h5>
+        <span class="card-text">Mens Shoes
+        </span>
+        <span class="card-text">MRP : ₹ 9 695.00</span>
+      </div>
+    </div>
+
+
+    <div class="card2" style="width: 18rem;">
+      <img
+        src="https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.5/h_381,c_limit/5ed6b522-25a9-43f9-b086-4bd78703d205/court-vision-low-next-nature-shoes-p3CnbT.png"
+        class="card-img-top" alt="...">
+      <div class="card-body">
+
+        <h5 class="card-title">Nike Air Force 1
+        </h5>
+        <span class="card-text">Mens Shoes
+        </span>
+        <span class="card-text">MRP : ₹ 9 695.00</span>
+      </div>
+    </div>
+
+
+    <div class="card2" style="width: 18rem;">
+      <img
+        src="https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.5/h_381,c_limit/13692558-551a-4b52-a05b-3124ece1962c/icon-classic-sandals-Jrc3kN.png"
+        class="card-img-top" alt="...">
+      <div class="card-body">
+
+        <h5 class="card-title">Nike Air Force 1
+        </h5>
+        <span class="card-text">Mens Shoes
+        </span>
+        <span class="card-text">MRP : ₹ 9 695.00</span>
+      </div>
+    </div>
+
+
+    <div class="card2" style="width: 18rem;">
+      <img
+        src="https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.5/h_381,c_limit/4b24bc11-4ea0-4ee5-8d16-aa58b518475b/air-force-1-07-fresh-shoes-bBRnbq.png"
+        class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Nike Air Force 1
+        </h5>
+        <span class="card-text">Mens Shoes
+        </span>
+        <span class="card-text">MRP : ₹ 9 695.00</span>
+      </div>
+
+    </div>
+
+
+    <div class="card2" style="width: 18rem;">
+      <img
+        src="https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.5/h_381,c_limit/l3w4varugbogihcpj40e/air-force-1-shadow-shoes-mN8Glx.png"
+        class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Nike Air Force 1
+        </h5>
+        <span class="card-text">Mens Shoes
+        </span>
+        <span class="card-text">MRP : ₹ 9 695.00</span>
+      </div>
+
+    </div>
+
+
+    <div class="card2" style="width: 18rem;">
+      <img
+        src="https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.5/h_381,c_limit/706e54b6-9360-4760-817d-86bba495f2e5/court-vision-low-next-nature-shoes-N2fFHb.png"
+        class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Nike Air Force 1
+        </h5>
+        <span class="card-text">Mens Shoes
+        </span>
+        <span class="card-text">MRP : ₹ 9 695.00</span>
+      </div>
+
+    </div>
+
+
+    <div class="card2" style="width: 18rem;">
+      <img
+        src="https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.5/h_381,c_limit/4b24bc11-4ea0-4ee5-8d16-aa58b518475b/air-force-1-07-fresh-shoes-bBRnbq.png"
+        class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Nike Air Force 1
+        </h5>
+        <span class="card-text">Mens Shoes</span>
+        <span class="card-text">MRP : ₹ 9 695.00</span>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="container4 container-fluid">
+    <h4 class="m-18">Shop by Sport</h4>
+    <div class="row">
+      <div class="col-md-3 col-sm-6 mb-3">
+        <div class="card3 bg-dark text-white">
+          <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_440,c_limit/a3c971bc-bc0a-4c0c-8bdf-e807a3027e53/nike-just-do-it.jpg" class="card-img" alt="...">
+          <div class="card-img-overlay d-flex align-items-center justify-content-center">
+            <a href="#" class="btn btn-primary">Running</a>
+          </div>
+        </div>
+      </div>
+     <div class="col-md-3 col-sm-6 mb-3">
+        <div class="card3 bg-dark text-white">
+          <img
+          src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_440,c_limit/e4695209-3f23-4a05-a9f9-d0edde31b653/nike-just-do-it.jpg"
+          class="card-img" alt="...">
+          <div class="card-img-overlay  d-flex align-items-center justify-content-center">
+          <a href="#" class="btn btn-primary">Football</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card3 bg-dark text-white">
+        <img
+          src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_440,c_limit/38ed4b8e-9cfc-4e66-9ddd-02a52314eed9/nike-just-do-it.jpg"
+          class="card-img" alt="...">
+        <div class="card-img-overlay  d-flex align-items-center justify-content-center">
+          <a href="#" class="btn btn-primary">Basketball</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card3 bg-dark text-white">
+        <img
+          src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_440,c_limit/e36a4a2b-4d3f-4d1c-bc75-d6057b7cec87/nike-just-do-it.jpg"
+          class="card-img" alt="...">
+        <div class="card-img-overlay  d-flex align-items-center justify-content-center">
+          <a href="#" class="btn btn-primary">Training & Gym</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card3 bg-dark text-white">
+        <img
+          src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_440,c_limit/7ce96f81-bf80-45b9-918e-f2534f14015d/nike-just-do-it.jpg"
+          class="card-img" alt="...">
+        <div class="card-img-overlay  d-flex align-items-center justify-content-center">
+          <a href="#" class="btn btn-primary">Tennis</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card3 bg-dark text-white">
+        <img
+          src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_440,c_limit/6be55ac6-0243-42d6-87d0-a650074c658c/nike-just-do-it.jpg"
+          class="card-img" alt="...">
+        <div class="card-img-overlay d-flex align-items-center justify-content-center">
+          <a href="#" class="btn btn-primary">Yoga</a>
+        </div>
+      </div>
+    </div>
+      <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card3 bg-dark text-white">
+        <img
+          src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_440,c_limit/608705dc-dea5-4450-b68f-e624cf1ed2a7/nike-just-do-it.jpg"
+          class="card-img" alt="...">
+        <div class="card-img-overlay  d-flex align-items-center justify-content-center">
+          <a href="#" class="btn btn-primary">Skateboarding</a>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card3 bg-dark text-white">
+        <img
+          src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_440,c_limit/c779e4f6-7d91-46c3-9282-39155e0819e5/nike-just-do-it.jpg"
+          class="card-img" alt="...">
+        <div class="card-img-overlay  d-flex align-items-center justify-content-center">
+          <a href="#" class="btn btn-primary">Dance</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-light py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h6 class="fw-bold">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-decoration-none text-dark">Find A Store</a></li>
+                    <li><a href="#" class="text-decoration-none text-dark">Become A Member</a></li>
+                    <li><a href="#" class="text-decoration-none text-dark">Send Us Feedback</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h6 class="fw-bold">Help</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-decoration-none text-dark">Get Help</a></li>
+                    <li><a href="#" class="text-decoration-none text-dark">Order Status</a></li>
+                    <li><a href="#" class="text-decoration-none text-dark">Delivery</a></li>
+                    <li><a href="#" class="text-decoration-none text-dark">Returns</a></li>
+                    <li><a href="#" class="text-decoration-none text-dark">Payment Options</a></li>
+                    <li><a href="#" class="text-decoration-none text-dark">Contact Us On Nike.com Inquiries</a></li>
+                    <li><a href="#" class="text-decoration-none text-dark">Contact Us On All Other Inquiries</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h6 class="fw-bold">Company</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-decoration-none text-dark">About Nike</a></li>
+                    <li><a href="#" class="text-decoration-none text-dark">News</a></li>
+                    <li><a href="#" class="text-decoration-none text-dark">Careers</a></li>
+                    <li><a href="#" class="text-decoration-none text-dark">Investors</a></li>
+                    <li><a href="#" class="text-decoration-none text-dark">Sustainability</a></li>
+                    <li><a href="#" class="text-decoration-none text-dark">Report a Concern</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between mt-4">
+            <p class="mb-0">&copy; 2025 Nike, Inc. All rights reserved</p>
+            <div>
+                <a href="#" class="text-decoration-none text-dark me-3">Guides</a>
+                <a href="#" class="text-decoration-none text-dark me-3">Terms of Sale</a>
+                <a href="#" class="text-decoration-none text-dark me-3">Terms of Use</a>
+                <a href="#" class="text-decoration-none text-dark">Nike Privacy Policy</a>
+            </div>
+            <div>
+                <span class="me-1">🌍</span> India
+            </div>
+        </div>
+    </div>
+</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
